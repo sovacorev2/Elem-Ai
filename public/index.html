@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElemNote AI - Personal AI Tutor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ElemNote AI: Your Personal Study Assistant</h1>
+        <p>Upload your study materials (PDF, TXT) and ask Elem AI to summarize, generate quizzes, and more!</p>
+
+        <form id="studyForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="studyMaterial">Upload Study Material:</label>
+                <input type="file" id="studyMaterial" name="studyMaterial" accept=".pdf,.txt" required>
+            </div>
+            <div class="form-group">
+                <label for="userQuery">Your Query (e.g., 'summarize this into 5 bullet points', 'generate 3 multiple-choice questions'):</label>
+                <textarea id="userQuery" name="userQuery" rows="4" placeholder="What do you want Elem AI to do?" required></textarea>
+            </div>
+            <button type="submit">Process with Elem AI</button>
+        </form>
+
+        <div id="responseArea" class="response-area">
+            <h2>Elem AI's Response:</h2>
+            <p id="aiTextResponse">Your AI-powered insights will appear here...</p>
+            <audio id="aiAudioResponse" controls autoplay></audio>
+        </div>
+
+        <div id="loadingIndicator" class="loading-indicator" style="display: none;">
+            <div class="spinner"></div>
+            <p>Elem AI is thinking...</p>
+        </div>
+
+        <div id="errorArea" class="error-area" style="display: none;">
+            <p id="errorMessage"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
